@@ -1,0 +1,21 @@
+# data, checkpoints and logs never go into git
+data/
+runs/
+checkpoints/
+*.pt
+*.safetensors
+*.parquet
+*.bin
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# editors and OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
