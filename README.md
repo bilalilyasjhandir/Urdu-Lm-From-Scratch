@@ -1,6 +1,6 @@
 # Urdu language model from scratch: a tokenizer study
 
-**Status: in progress.** The data pipeline is written and tested on a sample. No model has been trained yet, so there are no results here.
+**Status: in progress.** The corpus is built. The tokenizers, the model and the training loop are written and tested at toy scale on CPU. No full model has been trained yet, so there are no results here.
 
 ## The question
 
@@ -26,10 +26,18 @@ One decoder-only transformer of about 100M parameters is trained once per tokeni
 | `bpe-32k` | SentencePiece BPE (the setup of earlier Urdu work) | 32,000 |
 | `unigram-32k` | SentencePiece Unigram | 32,000 |
 | `morph-bpe-32k` | Unsupervised morphological segmentation (Morfessor), then BPE inside each morph | 32,000 |
-| `char` | One token per character | a few hundred, set from the corpus |
+| `char` | One token per character | about 190, set from the corpus |
 | `bpe-8k`, `bpe-16k`, `bpe-64k` | Vocabulary-size sweep | 8,000 to 64,000 |
 
-Held fixed across arms: the transformer body, the training text, the amount of text seen (counted in characters, not tokens), the optimiser settings and the random seeds. The main arms are repeated over several seeds so differences can be compared with run-to-run noise.
+**Model.** 12 layers, 12 heads, width 768, context of 1,024 tokens ([urdu_lm/model.py](urdu_lm/model.py)). The body has 85M parameters in every arm. The embedding table grows with the vocabulary, so the total is about 110M at 32,000 tokens.
+
+**What is held fixed.** Every arm gets the same compute: the same number of optimiser steps, each over the same number of token positions, with the same optimiser settings ([configs/base.json](configs/base.json)). An arm with shorter tokens therefore reads less text in the same budget, which is the real cost of choosing it. The text read by each arm is reported next to its score. The step count in the config is provisional until the speed measurement on the training machine.
+
+**Same text for every arm.** A fixed alphabet (the characters covering 99.99% of the training text) is chosen once. Every other character is replaced by one placeholder before any tokenizer sees the text, so all arms model exactly the same character sequence.
+
+**Morphology arm.** Morfessor is unsupervised, and two settings were chosen by reading its output on training words. It is trained on word types, because with frequency-weighted counts it left every frequent word whole. A split is used only if its first morph has at least three letters, because otherwise it also cut short function words into single letters. Neither setting was tuned on validation or test data. `reports/morph_examples.md` shows what it produces.
+
+**Seeds.** The main arms are repeated over several seeds, so differences between arms can be compared with run-to-run noise.
 
 ### Evaluation
 
@@ -55,7 +63,15 @@ Source: the Urdu subset of [FineWeb2](https://huggingface.co/datasets/HuggingFac
 
 **Split by website.** About 0.5% of sites go to validation and 0.5% to test, and no page from those sites is trained on. Pages from one site share templates and writers, so a random document split would leak near-copies of test pages into training.
 
-On a 49,136-document sample, 49,028 documents (99.8%) passed the filters and none were exact duplicates. Full-corpus numbers will be in `reports/` after the full run.
+**Result of the full run** ([reports/cleaning_report.json](reports/cleaning_report.json), [reports/corpus_stats.md](reports/corpus_stats.md)). Of 4,858,678 documents, 4,849,117 (99.8%) passed the filters and 141 exact duplicates were removed.
+
+| Split | Documents | Characters | Words | Websites |
+|---|---:|---:|---:|---:|
+| Train | 4,818,016 | 12.06 billion | 2.57 billion | 29,069 |
+| Validation | 2,600 | 7.2 million | 1.5 million | 157 |
+| Test | 2,152 | 7.0 million | 1.5 million | 173 |
+
+Validation and test are capped at 50 documents per website, so no single site dominates them. The largest training site supplies 4.6% of the characters and the largest ten supply 18.7%.
 
 ## Running it
 
@@ -67,21 +83,31 @@ python scripts/00_check_env.py
 python scripts/01_download.py --data-dir D:/urdu-lm-data
 python scripts/02_clean.py    --data-dir D:/urdu-lm-data
 python scripts/03_stats.py    --data-dir D:/urdu-lm-data
+python scripts/04_tokenizer_data.py   --data-dir D:/urdu-lm-data
+python scripts/05_train_tokenizers.py --data-dir D:/urdu-lm-data
+python scripts/06_encode.py           --data-dir D:/urdu-lm-data
+python scripts/07_calibrate.py        --data-dir D:/urdu-lm-data --gpu 0
 ```
 
-Every script can be re-run after an interruption and continues where it stopped. Add `--sample` to the download for a 71 MB dry run. Tests: `python -m unittest discover -s tests -v`.
+One training run is one tokenizer arm, one seed, one GPU:
+
+```
+python scripts/train.py --data-dir D:/urdu-lm-data --arm bpe-32k --seed 1 --gpu 0
+```
+
+`scripts/run_queue.py` chains several runs on one GPU. Every script can be re-run after an interruption and continues where it stopped. A stopped training run resumes from its last checkpoint and trains on exactly the data it would have seen. Add `--sample` to the download for a 71 MB dry run. Tests: `python -m unittest discover -s tests -v`.
 
 ## Hardware
 
-Two NVIDIA RTX 3090 cards (24 GB each). Each card trains one arm at a time, so two arms run side by side.
+Two NVIDIA RTX 3090 cards (24 GB each), Windows 10, PyTorch 2.9.1. Each card trains one arm at a time, so two arms run side by side.
 
 ## Progress
 
 - [x] Literature and data check
 - [x] Download, normalisation, filtering, website-level split, corpus statistics
-- [ ] Full data run on the training machine
-- [ ] Tokenizers
-- [ ] Model and training loop, throughput calibration
+- [x] Full data run on the training machine
+- [x] Tokenizers, token encoding, model and training loop (tested at toy scale)
+- [ ] Tokenizers and encoding on the full corpus, speed measurement
 - [ ] Training runs
 - [ ] Evaluation and write-up
 

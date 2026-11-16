@@ -4,4 +4,5 @@ numpy
 pyarrow>=15
 huggingface_hub>=0.23
 sentencepiece
+morfessor
 psutil

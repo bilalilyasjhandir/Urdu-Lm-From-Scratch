@@ -41,6 +41,8 @@ def gpu_report() -> list[dict]:
         free, total = torch.cuda.mem_get_info(i)
         dev = torch.device(f"cuda:{i}")
         x = torch.randn(8192, 8192, device=dev, dtype=torch.float16)
+        for _ in range(3):  # warm-up: the first calls on a card include library start-up
+            y = x @ x
         torch.cuda.synchronize(dev)
         start = time.perf_counter()
         for _ in range(20):

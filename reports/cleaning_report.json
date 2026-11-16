@@ -1,0 +1,69 @@
+{
+  "sources": {
+    "fineweb2": {
+      "repo_id": "HuggingFaceFW/fineweb-2",
+      "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+    },
+    "multiblimp": {
+      "repo_id": "jumelet/multiblimp",
+      "revision": "de923efa8d2483d6b13364ee68e65308e990a991"
+    }
+  },
+  "raw_files": [
+    "000_00000.parquet",
+    "001_00000.parquet"
+  ],
+  "normalisation_rules": [
+    "Unicode NFKC, so Arabic presentation forms (U+FB50-U+FDFF, U+FE70-U+FEFF) become plain letters",
+    "Arabic look-alike letters mapped to their Urdu code points (yeh, kaf, heh, teh marbuta)",
+    "Arabic-Indic and Extended Arabic-Indic digits mapped to ASCII digits",
+    "Optional vowel marks (zabar, zer, pesh, tanween, shadda, sukun, superscript alef) removed",
+    "Quranic annotation signs and honorific marks removed",
+    "Tatweel (kashida) removed",
+    "Invisible formatting removed: zero-width space/joiner, direction marks, BOM, soft hyphen",
+    "Zero-width non-joiner kept only between two Arabic-script letters, and never doubled",
+    "URLs and email addresses removed",
+    "Control characters removed, whitespace runs collapsed, at most one blank line in a row",
+    "Unicode NFC at the end, so hamza and madda combine with their base letter"
+  ],
+  "filters": {
+    "min_chars": 200,
+    "min_arabic_share": 0.6,
+    "min_function_word_share": 0.05,
+    "function_word_window": 3000
+  },
+  "split": {
+    "by": "website (URL host)",
+    "val_per_mille_of_sites": 5,
+    "test_per_mille_of_sites": 5,
+    "key": "urdu-lm-split-v1"
+  },
+  "cleaning": {
+    "docs_in": 4858678,
+    "chars_in": 12197553920,
+    "docs_kept": 4849117,
+    "chars_kept": 12140893804,
+    "rejected_low_arabic_share": 9510,
+    "rejected_low_function_word_share": 48,
+    "rejected_too_short": 3
+  },
+  "splits": {
+    "exact_duplicates_removed": 141,
+    "train_docs": 4818016,
+    "train_chars": 12064088689,
+    "val_docs": 14502,
+    "val_chars": 33907592,
+    "test_docs": 16458,
+    "test_chars": 42678802,
+    "train_shards": 40,
+    "val_eval_docs": 2600,
+    "val_eval_chars": 7188207,
+    "val_eval_sites": 157,
+    "val_sites": 157,
+    "test_eval_docs": 2152,
+    "test_eval_chars": 6983707,
+    "test_eval_sites": 173,
+    "test_sites": 173
+  },
+  "seconds": 451
+}
