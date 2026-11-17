@@ -1,0 +1,950 @@
+{
+  "coverage_target": 0.9999,
+  "coverage_reached": 0.9999001,
+  "alphabet_size": 186,
+  "distinct_characters_in_training_text": 7867,
+  "characters_counted": 12016739244,
+  "sample": {
+    "per_mille_of_documents": 40,
+    "documents": 192238,
+    "lines": 2103001,
+    "characters": 483425173
+  },
+  "words": {
+    "tokens": 2517775341,
+    "distinct": 4651721,
+    "distinct_with_count_at_least_2": 2063669
+  },
+  "alphabet": [
+    {
+      "codepoint": "U+0020",
+      "name": "SPACE",
+      "share": 0.20952849
+    },
+    {
+      "codepoint": "U+0627",
+      "name": "ARABIC LETTER ALEF",
+      "share": 0.09396639
+    },
+    {
+      "codepoint": "U+06CC",
+      "name": "ARABIC LETTER FARSI YEH",
+      "share": 0.07906626
+    },
+    {
+      "codepoint": "U+06A9",
+      "name": "ARABIC LETTER KEHEH",
+      "share": 0.05281075
+    },
+    {
+      "codepoint": "U+0631",
+      "name": "ARABIC LETTER REH",
+      "share": 0.05112471
+    },
+    {
+      "codepoint": "U+0648",
+      "name": "ARABIC LETTER WAW",
+      "share": 0.04623705
+    },
+    {
+      "codepoint": "U+0646",
+      "name": "ARABIC LETTER NOON",
+      "share": 0.03975725
+    },
+    {
+      "codepoint": "U+06C1",
+      "name": "ARABIC LETTER HEH GOAL",
+      "share": 0.03923181
+    },
+    {
+      "codepoint": "U+06D2",
+      "name": "ARABIC LETTER YEH BARREE",
+      "share": 0.03868541
+    },
+    {
+      "codepoint": "U+0645",
+      "name": "ARABIC LETTER MEEM",
+      "share": 0.03664974
+    },
+    {
+      "codepoint": "U+062A",
+      "name": "ARABIC LETTER TEH",
+      "share": 0.0286842
+    },
+    {
+      "codepoint": "U+0644",
+      "name": "ARABIC LETTER LAM",
+      "share": 0.02787234
+    },
+    {
+      "codepoint": "U+0633",
+      "name": "ARABIC LETTER SEEN",
+      "share": 0.02759755
+    },
+    {
+      "codepoint": "U+0628",
+      "name": "ARABIC LETTER BEH",
+      "share": 0.02039238
+    },
+    {
+      "codepoint": "U+062F",
+      "name": "ARABIC LETTER DAL",
+      "share": 0.01921078
+    },
+    {
+      "codepoint": "U+06BA",
+      "name": "ARABIC LETTER NOON GHUNNA",
+      "share": 0.017842
+    },
+    {
+      "codepoint": "U+067E",
+      "name": "ARABIC LETTER PEH",
+      "share": 0.01309635
+    },
+    {
+      "codepoint": "U+062C",
+      "name": "ARABIC LETTER JEEM",
+      "share": 0.01178319
+    },
+    {
+      "codepoint": "U+06BE",
+      "name": "ARABIC LETTER HEH DOACHASHMEE",
+      "share": 0.01075215
+    },
+    {
+      "codepoint": "U+0639",
+      "name": "ARABIC LETTER AIN",
+      "share": 0.00913048
+    },
+    {
+      "codepoint": "U+06AF",
+      "name": "ARABIC LETTER GAF",
+      "share": 0.00909767
+    },
+    {
+      "codepoint": "U+0626",
+      "name": "ARABIC LETTER YEH WITH HAMZA ABOVE",
+      "share": 0.00869199
+    },
+    {
+      "codepoint": "U+0641",
+      "name": "ARABIC LETTER FEH",
+      "share": 0.00794668
+    },
+    {
+      "codepoint": "U+0642",
+      "name": "ARABIC LETTER QAF",
+      "share": 0.00750596
+    },
+    {
+      "codepoint": "U+0634",
+      "name": "ARABIC LETTER SHEEN",
+      "share": 0.00736874
+    },
+    {
+      "codepoint": "U+06D4",
+      "name": "ARABIC FULL STOP",
+      "share": 0.00713367
+    },
+    {
+      "codepoint": "U+0679",
+      "name": "ARABIC LETTER TTEH",
+      "share": 0.00681871
+    },
+    {
+      "codepoint": "U+062D",
+      "name": "ARABIC LETTER HAH",
+      "share": 0.00672288
+    },
+    {
+      "codepoint": "U+0632",
+      "name": "ARABIC LETTER ZAIN",
+      "share": 0.00655862
+    },
+    {
+      "codepoint": "U+062E",
+      "name": "ARABIC LETTER KHAH",
+      "share": 0.00499677
+    },
+    {
+      "codepoint": "U+0686",
+      "name": "ARABIC LETTER TCHEH",
+      "share": 0.0046154
+    },
+    {
+      "codepoint": "U+060C",
+      "name": "ARABIC COMMA",
+      "share": 0.00452826
+    },
+    {
+      "codepoint": "U+0635",
+      "name": "ARABIC LETTER SAD",
+      "share": 0.00428966
+    },
+    {
+      "codepoint": "U+0622",
+      "name": "ARABIC LETTER ALEF WITH MADDA ABOVE",
+      "share": 0.00413751
+    },
+    {
+      "codepoint": "U+0637",
+      "name": "ARABIC LETTER TAH",
+      "share": 0.00330013
+    },
+    {
+      "codepoint": "U+0688",
+      "name": "ARABIC LETTER DDAL",
+      "share": 0.00316181
+    },
+    {
+      "codepoint": "U+0691",
+      "name": "ARABIC LETTER RREH",
+      "share": 0.00184665
+    },
+    {
+      "codepoint": "U+0636",
+      "name": "ARABIC LETTER DAD",
+      "share": 0.001816
+    },
+    {
+      "codepoint": "U+0638",
+      "name": "ARABIC LETTER ZAH",
+      "share": 0.00150264
+    },
+    {
+      "codepoint": "U+063A",
+      "name": "ARABIC LETTER GHAIN",
+      "share": 0.00128552
+    },
+    {
+      "codepoint": "U+0630",
+      "name": "ARABIC LETTER THAL",
+      "share": 0.00114584
+    },
+    {
+      "codepoint": "U+0031",
+      "name": "DIGIT ONE",
+      "share": 0.00106208
+    },
+    {
+      "codepoint": "U+0030",
+      "name": "DIGIT ZERO",
+      "share": 0.00101679
+    },
+    {
+      "codepoint": "U+062B",
+      "name": "ARABIC LETTER THEH",
+      "share": 0.00100362
+    },
+    {
+      "codepoint": "U+002E",
+      "name": "FULL STOP",
+      "share": 0.00100205
+    },
+    {
+      "codepoint": "U+0032",
+      "name": "DIGIT TWO",
+      "share": 0.00097204
+    },
+    {
+      "codepoint": "U+0065",
+      "name": "LATIN SMALL LETTER E",
+      "share": 0.00073353
+    },
+    {
+      "codepoint": "U+2018",
+      "name": "LEFT SINGLE QUOTATION MARK",
+      "share": 0.00066973
+    },
+    {
+      "codepoint": "U+0029",
+      "name": "RIGHT PARENTHESIS",
+      "share": 0.00063842
+    },
+    {
+      "codepoint": "U+0028",
+      "name": "LEFT PARENTHESIS",
+      "share": 0.00063282
+    },
+    {
+      "codepoint": "U+0061",
+      "name": "LATIN SMALL LETTER A",
+      "share": 0.00062066
+    },
+    {
+      "codepoint": "U+003A",
+      "name": "COLON",
+      "share": 0.00057455
+    },
+    {
+      "codepoint": "U+2019",
+      "name": "RIGHT SINGLE QUOTATION MARK",
+      "share": 0.00054807
+    },
+    {
+      "codepoint": "U+0069",
+      "name": "LATIN SMALL LETTER I",
+      "share": 0.00052738
+    },
+    {
+      "codepoint": "U+002D",
+      "name": "HYPHEN-MINUS",
+      "share": 0.00051745
+    },
+    {
+      "codepoint": "U+006F",
+      "name": "LATIN SMALL LETTER O",
+      "share": 0.00050431
+    },
+    {
+      "codepoint": "U+0624",
+      "name": "ARABIC LETTER WAW WITH HAMZA ABOVE",
+      "share": 0.00048963
+    },
+    {
+      "codepoint": "U+0074",
+      "name": "LATIN SMALL LETTER T",
+      "share": 0.00047498
+    },
+    {
+      "codepoint": "U+0072",
+      "name": "LATIN SMALL LETTER R",
+      "share": 0.00045001
+    },
+    {
+      "codepoint": "U+006E",
+      "name": "LATIN SMALL LETTER N",
+      "share": 0.00044731
+    },
+    {
+      "codepoint": "U+0033",
+      "name": "DIGIT THREE",
+      "share": 0.00043542
+    },
+    {
+      "codepoint": "U+0035",
+      "name": "DIGIT FIVE",
+      "share": 0.00042383
+    },
+    {
+      "codepoint": "U+0073",
+      "name": "LATIN SMALL LETTER S",
+      "share": 0.00040767
+    },
+    {
+      "codepoint": "U+0034",
+      "name": "DIGIT FOUR",
+      "share": 0.0003765
+    },
+    {
+      "codepoint": "U+0039",
+      "name": "DIGIT NINE",
+      "share": 0.00037568
+    },
+    {
+      "codepoint": "U+0621",
+      "name": "ARABIC LETTER HAMZA",
+      "share": 0.00037245
+    },
+    {
+      "codepoint": "U+061F",
+      "name": "ARABIC QUESTION MARK",
+      "share": 0.00033032
+    },
+    {
+      "codepoint": "U+0038",
+      "name": "DIGIT EIGHT",
+      "share": 0.00029932
+    },
+    {
+      "codepoint": "U+0036",
+      "name": "DIGIT SIX",
+      "share": 0.00029764
+    },
+    {
+      "codepoint": "U+006C",
+      "name": "LATIN SMALL LETTER L",
+      "share": 0.00029137
+    },
+    {
+      "codepoint": "U+0037",
+      "name": "DIGIT SEVEN",
+      "share": 0.00029043
+    },
+    {
+      "codepoint": "U+0064",
+      "name": "LATIN SMALL LETTER D",
+      "share": 0.00023017
+    },
+    {
+      "codepoint": "U+0068",
+      "name": "LATIN SMALL LETTER H",
+      "share": 0.00022522
+    },
+    {
+      "codepoint": "U+0075",
+      "name": "LATIN SMALL LETTER U",
+      "share": 0.00020733
+    },
+    {
+      "codepoint": "U+0063",
+      "name": "LATIN SMALL LETTER C",
+      "share": 0.00019664
+    },
+    {
+      "codepoint": "U+201D",
+      "name": "RIGHT DOUBLE QUOTATION MARK",
+      "share": 0.00019562
+    },
+    {
+      "codepoint": "U+006D",
+      "name": "LATIN SMALL LETTER M",
+      "share": 0.00019184
+    },
+    {
+      "codepoint": "U+0022",
+      "name": "QUOTATION MARK",
+      "share": 0.00016886
+    },
+    {
+      "codepoint": "U+0070",
+      "name": "LATIN SMALL LETTER P",
+      "share": 0.00014319
+    },
+    {
+      "codepoint": "U+201C",
+      "name": "LEFT DOUBLE QUOTATION MARK",
+      "share": 0.00013853
+    },
+    {
+      "codepoint": "U+0021",
+      "name": "EXCLAMATION MARK",
+      "share": 0.00013604
+    },
+    {
+      "codepoint": "U+002C",
+      "name": "COMMA",
+      "share": 0.00012401
+    },
+    {
+      "codepoint": "U+0079",
+      "name": "LATIN SMALL LETTER Y",
+      "share": 0.0001238
+    },
+    {
+      "codepoint": "U+06C3",
+      "name": "ARABIC LETTER TEH MARBUTA GOAL",
+      "share": 0.00012349
+    },
+    {
+      "codepoint": "U+0053",
+      "name": "LATIN CAPITAL LETTER S",
+      "share": 0.00012027
+    },
+    {
+      "codepoint": "U+0067",
+      "name": "LATIN SMALL LETTER G",
+      "share": 0.00011682
+    },
+    {
+      "codepoint": "U+0041",
+      "name": "LATIN CAPITAL LETTER A",
+      "share": 0.0001159
+    },
+    {
+      "codepoint": "U+0027",
+      "name": "APOSTROPHE",
+      "share": 0.00011486
+    },
+    {
+      "codepoint": "U+0066",
+      "name": "LATIN SMALL LETTER F",
+      "share": 9.826e-05
+    },
+    {
+      "codepoint": "U+0043",
+      "name": "LATIN CAPITAL LETTER C",
+      "share": 9.573e-05
+    },
+    {
+      "codepoint": "U+0062",
+      "name": "LATIN SMALL LETTER B",
+      "share": 9.488e-05
+    },
+    {
+      "codepoint": "U+0050",
+      "name": "LATIN CAPITAL LETTER P",
+      "share": 9.293e-05
+    },
+    {
+      "codepoint": "U+0054",
+      "name": "LATIN CAPITAL LETTER T",
+      "share": 8.816e-05
+    },
+    {
+      "codepoint": "U+002F",
+      "name": "SOLIDUS",
+      "share": 8.751e-05
+    },
+    {
+      "codepoint": "U+0049",
+      "name": "LATIN CAPITAL LETTER I",
+      "share": 8.627e-05
+    },
+    {
+      "codepoint": "U+0077",
+      "name": "LATIN SMALL LETTER W",
+      "share": 8.573e-05
+    },
+    {
+      "codepoint": "U+004D",
+      "name": "LATIN CAPITAL LETTER M",
+      "share": 8.538e-05
+    },
+    {
+      "codepoint": "U+006B",
+      "name": "LATIN SMALL LETTER K",
+      "share": 7.678e-05
+    },
+    {
+      "codepoint": "U+0623",
+      "name": "ARABIC LETTER ALEF WITH HAMZA ABOVE",
+      "share": 7.3e-05
+    },
+    {
+      "codepoint": "U+0076",
+      "name": "LATIN SMALL LETTER V",
+      "share": 6.612e-05
+    },
+    {
+      "codepoint": "U+0044",
+      "name": "LATIN CAPITAL LETTER D",
+      "share": 6.418e-05
+    },
+    {
+      "codepoint": "U+004E",
+      "name": "LATIN CAPITAL LETTER N",
+      "share": 6.068e-05
+    },
+    {
+      "codepoint": "U+0045",
+      "name": "LATIN CAPITAL LETTER E",
+      "share": 6.066e-05
+    },
+    {
+      "codepoint": "U+0042",
+      "name": "LATIN CAPITAL LETTER B",
+      "share": 6.012e-05
+    },
+    {
+      "codepoint": "U+0052",
+      "name": "LATIN CAPITAL LETTER R",
+      "share": 5.933e-05
+    },
+    {
+      "codepoint": "U+0698",
+      "name": "ARABIC LETTER JEH",
+      "share": 5.429e-05
+    },
+    {
+      "codepoint": "U+004F",
+      "name": "LATIN CAPITAL LETTER O",
+      "share": 5.379e-05
+    },
+    {
+      "codepoint": "U+061B",
+      "name": "ARABIC SEMICOLON",
+      "share": 5.09e-05
+    },
+    {
+      "codepoint": "U+0046",
+      "name": "LATIN CAPITAL LETTER F",
+      "share": 4.851e-05
+    },
+    {
+      "codepoint": "U+007C",
+      "name": "VERTICAL LINE",
+      "share": 4.7e-05
+    },
+    {
+      "codepoint": "U+004C",
+      "name": "LATIN CAPITAL LETTER L",
+      "share": 4.363e-05
+    },
+    {
+      "codepoint": "U+0047",
+      "name": "LATIN CAPITAL LETTER G",
+      "share": 4.246e-05
+    },
+    {
+      "codepoint": "U+0055",
+      "name": "LATIN CAPITAL LETTER U",
+      "share": 4.174e-05
+    },
+    {
+      "codepoint": "U+0048",
+      "name": "LATIN CAPITAL LETTER H",
+      "share": 4.125e-05
+    },
+    {
+      "codepoint": "U+005D",
+      "name": "RIGHT SQUARE BRACKET",
+      "share": 3.535e-05
+    },
+    {
+      "codepoint": "U+005B",
+      "name": "LEFT SQUARE BRACKET",
+      "share": 3.527e-05
+    },
+    {
+      "codepoint": "U+06C2",
+      "name": "ARABIC LETTER HEH GOAL WITH HAMZA ABOVE",
+      "share": 3.185e-05
+    },
+    {
+      "codepoint": "U+0078",
+      "name": "LATIN SMALL LETTER X",
+      "share": 3.086e-05
+    },
+    {
+      "codepoint": "U+0625",
+      "name": "ARABIC LETTER ALEF WITH HAMZA BELOW",
+      "share": 3.059e-05
+    },
+    {
+      "codepoint": "U+0056",
+      "name": "LATIN CAPITAL LETTER V",
+      "share": 3.015e-05
+    },
+    {
+      "codepoint": "U+0057",
+      "name": "LATIN CAPITAL LETTER W",
+      "share": 3.01e-05
+    },
+    {
+      "codepoint": "U+004B",
+      "name": "LATIN CAPITAL LETTER K",
+      "share": 2.944e-05
+    },
+    {
+      "codepoint": "U+2013",
+      "name": "EN DASH",
+      "share": 2.737e-05
+    },
+    {
+      "codepoint": "U+066D",
+      "name": "ARABIC FIVE POINTED STAR",
+      "share": 2.478e-05
+    },
+    {
+      "codepoint": "U+2014",
+      "name": "EM DASH",
+      "share": 2.429e-05
+    },
+    {
+      "codepoint": "U+005F",
+      "name": "LOW LINE",
+      "share": 2.401e-05
+    },
+    {
+      "codepoint": "U+002A",
+      "name": "ASTERISK",
+      "share": 2.368e-05
+    },
+    {
+      "codepoint": "U+0058",
+      "name": "LATIN CAPITAL LETTER X",
+      "share": 2.293e-05
+    },
+    {
+      "codepoint": "U+007A",
+      "name": "LATIN SMALL LETTER Z",
+      "share": 2.181e-05
+    },
+    {
+      "codepoint": "U+004A",
+      "name": "LATIN CAPITAL LETTER J",
+      "share": 1.939e-05
+    },
+    {
+      "codepoint": "U+0025",
+      "name": "PERCENT SIGN",
+      "share": 1.82e-05
+    },
+    {
+      "codepoint": "U+060D",
+      "name": "ARABIC DATE SEPARATOR",
+      "share": 1.752e-05
+    },
+    {
+      "codepoint": "U+06D3",
+      "name": "ARABIC LETTER YEH BARREE WITH HAMZA ABOVE",
+      "share": 1.657e-05
+    },
+    {
+      "codepoint": "U+0023",
+      "name": "NUMBER SIGN",
+      "share": 1.501e-05
+    },
+    {
+      "codepoint": "U+0024",
+      "name": "DOLLAR SIGN",
+      "share": 1.475e-05
+    },
+    {
+      "codepoint": "U+006A",
+      "name": "LATIN SMALL LETTER J",
+      "share": 1.421e-05
+    },
+    {
+      "codepoint": "U+0059",
+      "name": "LATIN CAPITAL LETTER Y",
+      "share": 1.409e-05
+    },
+    {
+      "codepoint": "U+0674",
+      "name": "ARABIC LETTER HIGH HAMZA",
+      "share": 1.397e-05
+    },
+    {
+      "codepoint": "U+0051",
+      "name": "LATIN CAPITAL LETTER Q",
+      "share": 1.32e-05
+    },
+    {
+      "codepoint": "U+0040",
+      "name": "COMMERCIAL AT",
+      "share": 1.284e-05
+    },
+    {
+      "codepoint": "U+0071",
+      "name": "LATIN SMALL LETTER Q",
+      "share": 1.016e-05
+    },
+    {
+      "codepoint": "U+002B",
+      "name": "PLUS SIGN",
+      "share": 9.71e-06
+    },
+    {
+      "codepoint": "U+003D",
+      "name": "EQUALS SIGN",
+      "share": 9.04e-06
+    },
+    {
+      "codepoint": "U+003F",
+      "name": "QUESTION MARK",
+      "share": 8.64e-06
+    },
+    {
+      "codepoint": "U+005A",
+      "name": "LATIN CAPITAL LETTER Z",
+      "share": 8.09e-06
+    },
+    {
+      "codepoint": "U+FD3F",
+      "name": "ORNATE RIGHT PARENTHESIS",
+      "share": 7.84e-06
+    },
+    {
+      "codepoint": "U+FD3E",
+      "name": "ORNATE LEFT PARENTHESIS",
+      "share": 7.62e-06
+    },
+    {
+      "codepoint": "U+093E",
+      "name": "DEVANAGARI VOWEL SIGN AA",
+      "share": 6.81e-06
+    },
+    {
+      "codepoint": "U+00BB",
+      "name": "RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK",
+      "share": 6.33e-06
+    },
+    {
+      "codepoint": "U+06AA",
+      "name": "ARABIC LETTER SWASH KAF",
+      "share": 6.3e-06
+    },
+    {
+      "codepoint": "U+0026",
+      "name": "AMPERSAND",
+      "share": 5.58e-06
+    },
+    {
+      "codepoint": "U+00AB",
+      "name": "LEFT-POINTING DOUBLE ANGLE QUOTATION MARK",
+      "share": 5.24e-06
+    },
+    {
+      "codepoint": "U+0915",
+      "name": "DEVANAGARI LETTER KA",
+      "share": 5.22e-06
+    },
+    {
+      "codepoint": "U+0930",
+      "name": "DEVANAGARI LETTER RA",
+      "share": 5.02e-06
+    },
+    {
+      "codepoint": "U+060E",
+      "name": "ARABIC POETIC VERSE SIGN",
+      "share": 4.93e-06
+    },
+    {
+      "codepoint": "U+0654",
+      "name": "ARABIC HAMZA ABOVE",
+      "share": 4.93e-06
+    },
+    {
+      "codepoint": "U+2022",
+      "name": "BULLET",
+      "share": 4.82e-06
+    },
+    {
+      "codepoint": "U+0653",
+      "name": "ARABIC MADDAH ABOVE",
+      "share": 4.72e-06
+    },
+    {
+      "codepoint": "U+003B",
+      "name": "SEMICOLON",
+      "share": 4.69e-06
+    },
+    {
+      "codepoint": "U+00BF",
+      "name": "INVERTED QUESTION MARK",
+      "share": 4.63e-06
+    },
+    {
+      "codepoint": "U+0947",
+      "name": "DEVANAGARI VOWEL SIGN E",
+      "share": 4.56e-06
+    },
+    {
+      "codepoint": "U+003E",
+      "name": "GREATER-THAN SIGN",
+      "share": 4.53e-06
+    },
+    {
+      "codepoint": "U+005C",
+      "name": "REVERSE SOLIDUS",
+      "share": 4.44e-06
+    },
+    {
+      "codepoint": "U+007D",
+      "name": "RIGHT CURLY BRACKET",
+      "share": 4.17e-06
+    },
+    {
+      "codepoint": "U+007B",
+      "name": "LEFT CURLY BRACKET",
+      "share": 4.09e-06
+    },
+    {
+      "codepoint": "U+094D",
+      "name": "DEVANAGARI SIGN VIRAMA",
+      "share": 3.32e-06
+    },
+    {
+      "codepoint": "U+0940",
+      "name": "DEVANAGARI VOWEL SIGN II",
+      "share": 3.2e-06
+    },
+    {
+      "codepoint": "U+0928",
+      "name": "DEVANAGARI LETTER NA",
+      "share": 3.12e-06
+    },
+    {
+      "codepoint": "U+0939",
+      "name": "DEVANAGARI LETTER HA",
+      "share": 3.11e-06
+    },
+    {
+      "codepoint": "U+093F",
+      "name": "DEVANAGARI VOWEL SIGN I",
+      "share": 2.91e-06
+    },
+    {
+      "codepoint": "U+0902",
+      "name": "DEVANAGARI SIGN ANUSVARA",
+      "share": 2.83e-06
+    },
+    {
+      "codepoint": "U+0938",
+      "name": "DEVANAGARI LETTER SA",
+      "share": 2.81e-06
+    },
+    {
+      "codepoint": "U+092E",
+      "name": "DEVANAGARI LETTER MA",
+      "share": 2.52e-06
+    },
+    {
+      "codepoint": "U+0924",
+      "name": "DEVANAGARI LETTER TA",
+      "share": 2.44e-06
+    },
+    {
+      "codepoint": "U+06D0",
+      "name": "ARABIC LETTER E",
+      "share": 2.18e-06
+    },
+    {
+      "codepoint": "U+094B",
+      "name": "DEVANAGARI VOWEL SIGN O",
+      "share": 2.1e-06
+    },
+    {
+      "codepoint": "U+0932",
+      "name": "DEVANAGARI LETTER LA",
+      "share": 1.96e-06
+    },
+    {
+      "codepoint": "U+067D",
+      "name": "ARABIC LETTER TEH WITH THREE DOTS ABOVE DOWNWARDS",
+      "share": 1.9e-06
+    },
+    {
+      "codepoint": "U+0926",
+      "name": "DEVANAGARI LETTER DA",
+      "share": 1.85e-06
+    },
+    {
+      "codepoint": "U+003C",
+      "name": "LESS-THAN SIGN",
+      "share": 1.78e-06
+    },
+    {
+      "codepoint": "U+092A",
+      "name": "DEVANAGARI LETTER PA",
+      "share": 1.71e-06
+    },
+    {
+      "codepoint": "U+06BB",
+      "name": "ARABIC LETTER RNOON",
+      "share": 1.71e-06
+    },
+    {
+      "codepoint": "U+092F",
+      "name": "DEVANAGARI LETTER YA",
+      "share": 1.63e-06
+    },
+    {
+      "codepoint": "U+00A9",
+      "name": "COPYRIGHT SIGN",
+      "share": 1.5e-06
+    },
+    {
+      "codepoint": "U+091C",
+      "name": "DEVANAGARI LETTER JA",
+      "share": 1.44e-06
+    },
+    {
+      "codepoint": "U+0935",
+      "name": "DEVANAGARI LETTER VA",
+      "share": 1.38e-06
+    }
+  ]
+}

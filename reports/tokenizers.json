@@ -1,0 +1,92 @@
+{
+  "bpe-32k": {
+    "vocab_size": 32000,
+    "val_tokens": 1756316,
+    "val_characters": 7190807,
+    "tokens_per_word": 1.1471,
+    "characters_per_token": 4.0943,
+    "unk_tokens": 0,
+    "round_trip_docs_checked": 300,
+    "round_trip_docs_exact": 300,
+    "training_seconds": 15
+  },
+  "unigram-32k": {
+    "vocab_size": 32000,
+    "val_tokens": 1751456,
+    "val_characters": 7190807,
+    "tokens_per_word": 1.1439,
+    "characters_per_token": 4.1056,
+    "unk_tokens": 0,
+    "round_trip_docs_checked": 300,
+    "round_trip_docs_exact": 300,
+    "training_seconds": 189
+  },
+  "morph-bpe-32k": {
+    "vocab_size": 32000,
+    "val_tokens": 1838917,
+    "val_characters": 7190807,
+    "tokens_per_word": 1.201,
+    "characters_per_token": 3.9103,
+    "unk_tokens": 0,
+    "round_trip_docs_checked": 300,
+    "round_trip_docs_exact": 300,
+    "training_seconds": 273,
+    "morfessor": {
+      "training_types": 200000,
+      "morfessor_training_seconds": 192,
+      "count_modifier": "types (every word counts once)",
+      "min_word_count_for_segmentation": 5,
+      "min_stem_letters": 3,
+      "word_types_considered": 947818,
+      "word_types_morfessor_would_split": 928489,
+      "word_types_split": 526919,
+      "share_of_types_split": 0.5559,
+      "share_of_running_words_split": 0.0744,
+      "morphs_per_running_word": 1.0788
+    }
+  },
+  "char": {
+    "vocab_size": 190,
+    "val_tokens": 7190807,
+    "val_characters": 7190807,
+    "tokens_per_word": 4.6965,
+    "characters_per_token": 1.0,
+    "unk_tokens": 0,
+    "round_trip_docs_checked": 300,
+    "round_trip_docs_exact": 300,
+    "training_seconds": 0
+  },
+  "bpe-8k": {
+    "vocab_size": 8000,
+    "val_tokens": 1974791,
+    "val_characters": 7190807,
+    "tokens_per_word": 1.2898,
+    "characters_per_token": 3.6413,
+    "unk_tokens": 0,
+    "round_trip_docs_checked": 300,
+    "round_trip_docs_exact": 300,
+    "training_seconds": 14
+  },
+  "bpe-16k": {
+    "vocab_size": 16000,
+    "val_tokens": 1836395,
+    "val_characters": 7190807,
+    "tokens_per_word": 1.1994,
+    "characters_per_token": 3.9157,
+    "unk_tokens": 0,
+    "round_trip_docs_checked": 300,
+    "round_trip_docs_exact": 300,
+    "training_seconds": 15
+  },
+  "bpe-64k": {
+    "vocab_size": 64000,
+    "val_tokens": 1712949,
+    "val_characters": 7190807,
+    "tokens_per_word": 1.1188,
+    "characters_per_token": 4.1979,
+    "unk_tokens": 0,
+    "round_trip_docs_checked": 300,
+    "round_trip_docs_exact": 300,
+    "training_seconds": 16
+  }
+}

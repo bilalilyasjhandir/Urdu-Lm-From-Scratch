@@ -31,7 +31,7 @@ One decoder-only transformer of about 100M parameters is trained once per tokeni
 
 **Model.** 12 layers, 12 heads, width 768, context of 1,024 tokens ([urdu_lm/model.py](urdu_lm/model.py)). The body has 85M parameters in every arm. The embedding table grows with the vocabulary, so the total is about 110M at 32,000 tokens.
 
-**What is held fixed.** Every arm gets the same compute: the same number of optimiser steps, each over the same number of token positions, with the same optimiser settings ([configs/base.json](configs/base.json)). An arm with shorter tokens therefore reads less text in the same budget, which is the real cost of choosing it. The text read by each arm is reported next to its score. The step count in the config is provisional until the speed measurement on the training machine.
+**What is held fixed.** Every arm gets the same compute: 38,000 optimiser steps of 64 sequences of 1,024 tokens, which is 2.49 billion token positions, with the same optimiser settings ([configs/base.json](configs/base.json)). Training windows are drawn at random from the token stream. The budget is smaller than every subword arm's training set (2.82 to 3.23 billion tokens), so no arm makes a full pass. An arm with shorter tokens reads less text in the same budget, which is the real cost of choosing it: the character arm reads about a fifth of what the others do. The text read by each arm is reported next to its score. One learning rate is used for all arms and was not tuned per arm.
 
 **Same text for every arm.** A fixed alphabet (the characters covering 99.99% of the training text) is chosen once. Every other character is replaced by one placeholder before any tokenizer sees the text, so all arms model exactly the same character sequence.
 
@@ -42,7 +42,7 @@ One decoder-only transformer of about 100M parameters is trained once per tokeni
 ### Evaluation
 
 - **Bits per character** on held-out websites. Loss per token cannot be compared between tokenizers, because a model with longer tokens predicts more text per step. Bits per character can.
-- **MultiBLiMP, Urdu part** (Jumelet et al., 2025): 550 sentence pairs that differ in one agreement feature. The model should give the grammatical sentence the higher probability. This set is small.
+- **MultiBLiMP, Urdu part** (Jumelet et al., 2025): 550 sentence pairs that differ in one agreement feature. The model should give the grammatical sentence the higher probability. This set is small. In 143 pairs the source treebank joins multiword tokens with an underscore, which never occurs in running Urdu, so the underscore is replaced by a space in both sentences.
 - **UrBLiMP** (Adeeba et al., 2026): 5,696 pairs over ten phenomena. The paper says the data will be released. I have not found it yet, so this is not confirmed.
 - **Reference point:** the released UrduLM checkpoint, scored on the same test text.
 
@@ -73,6 +73,34 @@ Source: the Urdu subset of [FineWeb2](https://huggingface.co/datasets/HuggingFac
 
 Validation and test are capped at 50 documents per website, so no single site dominates them. The largest training site supplies 4.6% of the characters and the largest ten supply 18.7%.
 
+## Tokenizers on the full corpus
+
+From [reports/tokenizers.json](reports/tokenizers.json) and [reports/encoding.json](reports/encoding.json). All seven reproduce the validation text exactly after decoding, and none produces an unknown token. The alphabet has 186 characters.
+
+| Arm | Vocabulary | Tokens per word | Characters per token | Training tokens |
+|---|---:|---:|---:|---:|
+| `bpe-8k` | 8,000 | 1.290 | 3.64 | 3.23 billion |
+| `bpe-16k` | 16,000 | 1.199 | 3.92 | 3.01 billion |
+| `bpe-32k` | 32,000 | 1.147 | 4.09 | 2.89 billion |
+| `bpe-64k` | 64,000 | 1.119 | 4.20 | 2.82 billion |
+| `unigram-32k` | 32,000 | 1.144 | 4.11 | 2.88 billion |
+| `morph-bpe-32k` | 32,000 | 1.201 | 3.91 | 3.02 billion |
+| `char` | 190 | 4.697 | 1.00 | 12.07 billion |
+
+Tokens per word and characters per token are measured on the validation set. In the morphology arm, Morfessor's splits are used for 7.4% of running words, giving 1.08 morphs per word ([reports/morph_examples.md](reports/morph_examples.md)).
+
+## Training speed
+
+Measured with real training steps on each card ([reports/calibration.json](reports/calibration.json)). The two cards perform the same.
+
+| Arm | Micro-batch | Tokens per second | Peak memory | One full run |
+|---|---:|---:|---:|---:|
+| `bpe-32k` | 16 | 59,800 | 12.5 GB | about 11.6 hours |
+| `bpe-64k` | 16 | 47,700 | 18.6 GB | about 14.5 hours |
+| `char` | 16 | 76,200 | 6.4 GB | about 9.1 hours |
+
+Planned: the four main arms (`bpe-32k`, `unigram-32k`, `morph-bpe-32k`, `char`) with three seeds each, and one run each for `bpe-8k`, `bpe-16k` and `bpe-64k`. That is 15 runs, roughly 170 GPU-hours.
+
 ## Running it
 
 Python 3.10 or newer. Install PyTorch with CUDA from pytorch.org first, then:
@@ -95,7 +123,7 @@ One training run is one tokenizer arm, one seed, one GPU:
 python scripts/train.py --data-dir D:/urdu-lm-data --arm bpe-32k --seed 1 --gpu 0
 ```
 
-`scripts/run_queue.py` chains several runs on one GPU. Every script can be re-run after an interruption and continues where it stopped. A stopped training run resumes from its last checkpoint and trains on exactly the data it would have seen. Add `--sample` to the download for a 71 MB dry run. Tests: `python -m unittest discover -s tests -v`.
+`scripts/run_queue.py` chains several runs on one GPU, and `scripts/evaluate.py` scores every finished run and writes `reports/results.md`. Every script can be re-run after an interruption and continues where it stopped. A stopped training run resumes from its last checkpoint and trains on exactly the data it would have seen. Add `--sample` to the download for a 71 MB dry run. Tests: `python -m unittest discover -s tests -v`.
 
 ## Hardware
 
@@ -107,9 +135,10 @@ Two NVIDIA RTX 3090 cards (24 GB each), Windows 10, PyTorch 2.9.1. Each card tra
 - [x] Download, normalisation, filtering, website-level split, corpus statistics
 - [x] Full data run on the training machine
 - [x] Tokenizers, token encoding, model and training loop (tested at toy scale)
-- [ ] Tokenizers and encoding on the full corpus, speed measurement
+- [x] Tokenizers and encoding on the full corpus, speed measurement
+- [x] Evaluation script (tested at toy scale)
 - [ ] Training runs
-- [ ] Evaluation and write-up
+- [ ] Results and write-up
 
 ## References
 

@@ -1,0 +1,158 @@
+{
+  "gpu0": {
+    "device": "NVIDIA GeForce RTX 3090",
+    "torch": "2.9.1+cu126",
+    "arms": {
+      "bpe-32k": {
+        "8": {
+          "tokens_per_sec": 55174,
+          "peak_memory_gb": 6.97,
+          "loss_after": 9.392,
+          "hours_for_full_run": 12.5
+        },
+        "16": {
+          "tokens_per_sec": 59552,
+          "peak_memory_gb": 12.46,
+          "loss_after": 9.405,
+          "hours_for_full_run": 11.6
+        },
+        "24": {
+          "tokens_per_sec": 59831,
+          "peak_memory_gb": 17.98,
+          "loss_after": 9.386,
+          "hours_for_full_run": 11.6
+        },
+        "32": {
+          "out_of_memory": true
+        }
+      },
+      "bpe-64k": {
+        "8": {
+          "tokens_per_sec": 43940,
+          "peak_memory_gb": 10.22,
+          "loss_after": 9.935,
+          "hours_for_full_run": 15.7
+        },
+        "16": {
+          "tokens_per_sec": 47268,
+          "peak_memory_gb": 18.64,
+          "loss_after": 9.951,
+          "hours_for_full_run": 14.6
+        },
+        "24": {
+          "out_of_memory": true
+        }
+      },
+      "char": {
+        "8": {
+          "tokens_per_sec": 68865,
+          "peak_memory_gb": 3.77,
+          "loss_after": 2.969,
+          "hours_for_full_run": 10.0
+        },
+        "16": {
+          "tokens_per_sec": 75403,
+          "peak_memory_gb": 6.38,
+          "loss_after": 2.982,
+          "hours_for_full_run": 9.2
+        },
+        "24": {
+          "tokens_per_sec": 75640,
+          "peak_memory_gb": 9.01,
+          "loss_after": 2.964,
+          "hours_for_full_run": 9.1
+        },
+        "32": {
+          "tokens_per_sec": 76218,
+          "peak_memory_gb": 11.64,
+          "loss_after": 2.968,
+          "hours_for_full_run": 9.1
+        },
+        "48": {
+          "tokens_per_sec": 76637,
+          "peak_memory_gb": 16.86,
+          "loss_after": 2.964,
+          "hours_for_full_run": 9.0
+        }
+      }
+    }
+  },
+  "gpu1": {
+    "device": "NVIDIA GeForce RTX 3090",
+    "torch": "2.9.1+cu126",
+    "arms": {
+      "bpe-32k": {
+        "8": {
+          "tokens_per_sec": 55111,
+          "peak_memory_gb": 6.97,
+          "loss_after": 9.392,
+          "hours_for_full_run": 12.6
+        },
+        "16": {
+          "tokens_per_sec": 59835,
+          "peak_memory_gb": 12.46,
+          "loss_after": 9.405,
+          "hours_for_full_run": 11.6
+        },
+        "24": {
+          "tokens_per_sec": 60374,
+          "peak_memory_gb": 17.98,
+          "loss_after": 9.386,
+          "hours_for_full_run": 11.5
+        },
+        "32": {
+          "out_of_memory": true
+        }
+      },
+      "bpe-64k": {
+        "8": {
+          "tokens_per_sec": 44335,
+          "peak_memory_gb": 10.22,
+          "loss_after": 9.935,
+          "hours_for_full_run": 15.6
+        },
+        "16": {
+          "tokens_per_sec": 47708,
+          "peak_memory_gb": 18.64,
+          "loss_after": 9.951,
+          "hours_for_full_run": 14.5
+        },
+        "24": {
+          "out_of_memory": true
+        }
+      },
+      "char": {
+        "8": {
+          "tokens_per_sec": 69096,
+          "peak_memory_gb": 3.77,
+          "loss_after": 2.969,
+          "hours_for_full_run": 10.0
+        },
+        "16": {
+          "tokens_per_sec": 76198,
+          "peak_memory_gb": 6.38,
+          "loss_after": 2.982,
+          "hours_for_full_run": 9.1
+        },
+        "24": {
+          "tokens_per_sec": 77225,
+          "peak_memory_gb": 9.01,
+          "loss_after": 2.964,
+          "hours_for_full_run": 9.0
+        },
+        "32": {
+          "tokens_per_sec": 78748,
+          "peak_memory_gb": 11.64,
+          "loss_after": 2.968,
+          "hours_for_full_run": 8.8
+        },
+        "48": {
+          "tokens_per_sec": 79929,
+          "peak_memory_gb": 16.86,
+          "loss_after": 2.964,
+          "hours_for_full_run": 8.7
+        }
+      }
+    }
+  }
+}
